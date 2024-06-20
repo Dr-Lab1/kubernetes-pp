@@ -18,7 +18,7 @@ Vagrant.configure(2) do |config|
   config.vm.define "master" do |master|
     master.vm.box = "centos/7"
     master.vm.hostname = "master.drlab1"
-    master.vm.network "private_network", ip: "172.42.42.200"
+    master.vm.network "private_network", ip: "172.42.42.100"
     master.vm.provider "virtualbox" do |v|
       v.name = "master"
       v.memory = 2048
@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
     config.vm.define "worker#{i}" do |workernode|
       workernode.vm.box = "centos/7"
       workernode.vm.hostname = "worker#{i}.drlab1"
-      workernode.vm.network "private_network", ip: "172.42.42.20#{i}"
+      workernode.vm.network "private_network", ip: "172.42.42.10#{i}"
       workernode.vm.provider "virtualbox" do |v|
         v.name = "worker#{i}"
         v.memory = 1024
